@@ -99,7 +99,7 @@
               <grid row="6" column="0" row-span="4" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Label"/>
+              <text value="Hora entrada"/>
             </properties>
           </component>
           <component id="d24e3" class="javax.swing.JLabel" binding="tipoReserva">
@@ -107,7 +107,7 @@
               <grid row="10" column="0" row-span="3" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Label"/>
+              <text value="Tipo de reserva"/>
             </properties>
           </component>
           <component id="3bfc9" class="javax.swing.JTextField" binding="textoFecha">
@@ -123,7 +123,7 @@
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Label"/>
+              <text value="Fecha"/>
             </properties>
           </component>
           <component id="185c7" class="javax.swing.JTextField" binding="textoDuracion">
@@ -155,7 +155,7 @@
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Label"/>
+              <text value="Duración"/>
             </properties>
           </component>
         </children>

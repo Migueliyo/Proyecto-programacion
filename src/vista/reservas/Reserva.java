@@ -30,11 +30,11 @@ public class Reserva {
     public Reserva () {
         ventanaReservas = new JFrame("Aplicación reservas");
         ventanaReservas.setContentPane(panelPrincipal);
-        ventanaReservas.setSize(800,800);
+        //ventanaReservas.setSize(800,800);
         ventanaReservas.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventanaReservas.setLocationRelativeTo(null);
-        // ventanaLogin.pack();
-        //ventanaReservas.setVisible(true);
+        ventanaReservas.pack();
+        ventanaReservas.setVisible(true);
     }
 
     public JFrame getVentanaReservas() {
