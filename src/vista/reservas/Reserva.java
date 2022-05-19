@@ -45,6 +45,34 @@ public class Reserva {
         return labelPrueba;
     }
 
+    public JButton getBorrar() {
+        return borrar;
+    }
+
+    public JButton getBotonSalir() {
+        return botonSalir;
+    }
+
+    public JLabel getTextoUsuario() {
+        return textoUsuario;
+    }
+
+    public JTextField getTextoFecha() {
+        return textoFecha;
+    }
+
+    public JTextField getTextoDuracion() {
+        return textoDuracion;
+    }
+
+    public JTextField getTextoHoraEntrada() {
+        return textoHoraEntrada;
+    }
+
+    public JTextField getTextoTipoReserva() {
+        return textoTipoReserva;
+    }
+
     public static void main(String[] args) {
         new Reserva();
     }
