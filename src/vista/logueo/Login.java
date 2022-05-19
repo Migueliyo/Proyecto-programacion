@@ -24,7 +24,7 @@ public class Login {
         ventanaLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventanaLogin.setLocationRelativeTo(null);
        // ventanaLogin.pack();
-      //  ventanaLogin.setVisible(true);
+        ventanaLogin.setVisible(true);
     }
 
     public JFrame getVentanaLogin() {
