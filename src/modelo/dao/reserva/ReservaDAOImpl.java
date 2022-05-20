@@ -75,9 +75,46 @@ public class ReservaDAOImpl implements  ReservaDAO{
     }
 
     @Override
-    public List<Reserva> obtenerReservarPorUsuario(String dniUsuario) {
-        
-        return null;
+    public List<Reserva> obtenerReservarPorUsuario(String dniUsuario) throws SQLException {
+        List<Reserva> lista = new ArrayList<>();
+        Reserva reserva = null;
+        LocalDate fecha = null;
+        TipoReserva tipoReserva = null;
+        int duracion = 0, horaEntrada = 0, idUsuario = 0;
+        String dniUsuarioReserva = null, sTipoReserva = null;
+        idUsuario = usuarioDAO.buscarIDUsuarioPorDni(dniUsuario);
+        if (idUsuario == 0)
+            return lista;
+        String sqlReserva = " SELECT * FROM reservas WHERE id_usuario = ?;";
+        PreparedStatement sentencia = conexion.prepareStatement(sqlReserva);
+        sentencia.setInt(1, idUsuario);
+        ResultSet resultado = sentencia.executeQuery();
+
+
+        while (resultado.next()) {
+            fecha = LocalDate.parse(resultado.getString(2 ));
+            duracion = resultado.getInt(3);
+            horaEntrada = resultado.getInt(4);
+            sTipoReserva = resultado.getString(5);
+            tipoReserva = TipoReserva.GUIADA;
+            if (sTipoReserva.equals("NO_GUIADA"))
+                tipoReserva = TipoReserva.NO_GUIADA;
+            //idUsuario = resultado.getInt("id_usuario");
+            reserva = new Reserva(fecha, duracion, horaEntrada, dniUsuario);
+            reserva.setTipoReserva(tipoReserva);
+            lista.add(reserva);
+        }
+        return lista;
+    }
+
+    public static void main(String[] args) {
+        ReservaDAO dao  = new ReservaDAOImpl();
+        try {
+            List<Reserva> lista = dao.obtenerReservarPorUsuario("11111111S");
+            System.out.println(lista);
+        } catch (SQLException e) {
+            System.err.println("error");
+        }
     }
 
     @Override

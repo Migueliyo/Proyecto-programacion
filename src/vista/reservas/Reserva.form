@@ -116,7 +116,9 @@
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <editable value="false"/>
+            </properties>
           </component>
           <component id="208d6" class="javax.swing.JLabel" binding="fecha">
             <constraints>
@@ -132,7 +134,9 @@
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <editable value="false"/>
+            </properties>
           </component>
           <component id="cb256" class="javax.swing.JTextField" binding="textoHoraEntrada">
             <constraints>
@@ -140,7 +144,9 @@
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <editable value="false"/>
+            </properties>
           </component>
           <component id="dd2" class="javax.swing.JTextField" binding="textoTipoReserva">
             <constraints>
@@ -148,7 +154,9 @@
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <editable value="false"/>
+            </properties>
           </component>
           <component id="7bff1" class="javax.swing.JLabel" binding="duracion">
             <constraints>

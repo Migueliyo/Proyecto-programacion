@@ -37,6 +37,10 @@ public class Reserva {
         ventanaReservas.setVisible(true);
     }
 
+    public JButton getBotonCerrarSesion() {
+        return botonCerrarSesion;
+    }
+
     public JFrame getVentanaReservas() {
         return ventanaReservas;
     }

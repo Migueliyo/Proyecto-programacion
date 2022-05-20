@@ -8,7 +8,7 @@ public interface ReservaDAO {
 
     Reserva crearReserva(Reserva reserva) throws SQLException;
     List<Reserva> obtenerTodasReservas() throws SQLException;
-    List<Reserva> obtenerReservarPorUsuario(String dniUsuario);
+    List<Reserva> obtenerReservarPorUsuario(String dniUsuario) throws SQLException;
     boolean existeReserva (LocalDate fecha, int horaEntrada) throws SQLException;
     boolean eliminarReserva(Reserva reserva) throws SQLException;
     Reserva modificarReserva(Reserva oldReserva, Reserva newReservar) throws SQLException;

@@ -1,13 +1,15 @@
 package controlador.reservas;
 
+import helpers.Fechas;
 import modelo.dao.reserva.ReservaDAO;
 import modelo.dao.reserva.ReservaDAOImpl;
 import modelo.dao.usuario.Usuario;
 import modelo.dao.usuario.UsuarioDAO;
 import vista.logueo.Login;
 import vista.reservas.Reserva;
-
+import helpers.Fechas.*;
 import javax.swing.*;
+import java.sql.SQLException;
 
 public class ControladorReservas {
     private ReservaDAO modelo;
@@ -24,11 +26,27 @@ public class ControladorReservas {
     private void inicializarVista() {
         vista.getVentanaReservas().setVisible(true);
         vista.getTextoUsuario().setText(usuario.getNombre());
-        //vista.getTextoFecha().setText(modelo.);
+        try {
+            /*vista.getTextoFecha().setText(modelo.obtenerReservarPorUsuario(usuario.getDni()).get(0).
+                    getFecha().toString());*/
+            String fecha = Fechas.convertirFormatoFechaEspannol(modelo.obtenerReservarPorUsuario(usuario.getDni()).get(0).
+                    getFecha());
+            vista.getTextoFecha().setText(fecha);
+            vista.getTextoDuracion().setText(String.valueOf(modelo.obtenerReservarPorUsuario(usuario.getDni()).get(0).getDuracion()));
+            vista.getTextoHoraEntrada().setText(String.valueOf(modelo.obtenerReservarPorUsuario(usuario.getDni()).get(0).getHoraEntrada()));
+            vista.getTextoTipoReserva().setText(String.valueOf(modelo.obtenerReservarPorUsuario(usuario.getDni()).get(0).getTipoReserva()));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
     public void inicializarControlador() {
         vista.getBorrar().addActionListener(actionEvent -> borrarReserva());
+        vista.getBotonCerrarSesion().addActionListener(actionEvent -> cerrarSesion());
         vista.getBotonSalir().addActionListener(actionEvent -> salirApp());
+    }
+
+    private void cerrarSesion() {
+
     }
 
     private void borrarReserva() {
