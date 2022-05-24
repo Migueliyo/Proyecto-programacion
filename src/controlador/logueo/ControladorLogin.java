@@ -12,6 +12,7 @@ import java.util.Arrays;
 public class ControladorLogin {
     private UsuarioDAO modelo;
     private Login vista;
+    //private JFrame vistaReservas;
 
     public ControladorLogin(UsuarioDAO modelo, Login vista) {
         this.modelo = modelo;
@@ -40,7 +41,8 @@ public class ControladorLogin {
             //System.out.println(usuario);
             else {
                 vista.getVentanaLogin().setVisible(false);
-                new ControladorReservas(usuario).inicializarControlador();
+                new ControladorReservas(usuario, vista.getVentanaLogin()).inicializarControlador();
+
             }
             //crear una ventana con una etiqueta y esa etiqueta
             //son los datos del usuario
@@ -49,7 +51,7 @@ public class ControladorLogin {
             //ventana login que no se vea
             //arrancar el controlador de reservas que pinte la interface de reservas
         } catch (SQLException e) {
-            JOptionPane.showInternalMessageDialog(null, "Error en la apliación",
+            JOptionPane.showInternalMessageDialog(null, "Error en la aplicación",
                     "ERROR", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
         }

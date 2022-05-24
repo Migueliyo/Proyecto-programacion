@@ -107,16 +107,6 @@ public class ReservaDAOImpl implements  ReservaDAO{
         return lista;
     }
 
-    public static void main(String[] args) {
-        ReservaDAO dao  = new ReservaDAOImpl();
-        try {
-            List<Reserva> lista = dao.obtenerReservarPorUsuario("11111111S");
-            System.out.println(lista);
-        } catch (SQLException e) {
-            System.err.println("error");
-        }
-    }
-
     @Override
     public boolean existeReserva(LocalDate fecha, int horaEntrada) throws SQLException {
         int id = -1;

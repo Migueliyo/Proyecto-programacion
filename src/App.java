@@ -14,7 +14,6 @@ public class App {
                 ControladorLogin controladorLogin  =
                         new ControladorLogin(modelo, vista);
                 controladorLogin.inicializarControlador();
-
             }
         });
     }
